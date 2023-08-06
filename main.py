@@ -289,7 +289,7 @@ def send_email(name, email, phone, message):
         # connection.sendmail(MAIL_ADDRESS, MAIL_APP_PW, email_message)
         connection.sendmail(
             from_addr=MAIL_ADDRESS,
-            to_addrs=TO_MAIL_ADDRESS,
+            to_addrs=MAIL_ADDRESS,
             msg=email_message
         )
 
