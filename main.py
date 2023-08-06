@@ -43,7 +43,7 @@ gravatar = Gravatar(app,
                     base_url=None)
 
 # CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://vickys_blog_database_user:gwz2BlhrkqaL1LSyxJT2trKstNzixQhg@dpg-cj7qpps5kgrc73bhn2q0-a.oregon-postgres.render.com/vickys_blog_database"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://vickys_blog_database_user:gwz2BlhrkqaL1LSyxJT2trKstNzixQhg@dpg-cj7qpps5kgrc73bhn2q0-a.oregon-postgres.render.com/vickys_blog_database"
 
 # postgres://vickys_blog_database_user:gwz2BlhrkqaL1LSyxJT2trKstNzixQhg@dpg-cj7qpps5kgrc73bhn2q0-a.oregon-postgres.render.com/vickys_blog_database
 db = SQLAlchemy()
