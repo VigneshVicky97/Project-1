@@ -110,7 +110,7 @@ def admin_only(f):
     return decorated_function
 
 
-# Register new users into the User database
+# Register new users into the User databas
 @app.route('/register', methods=["GET", "POST"])
 def register():
     form = RegisterForm()
