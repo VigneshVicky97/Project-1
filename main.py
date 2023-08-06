@@ -138,7 +138,7 @@ def register():
         db.session.commit()
         # This line will authenticate the user with Flask-Login
         login_user(new_user)
-        # send_email(form.name.data, form.email.data, "", f"New User Registered!!!\n\nName: {form.name.data}\nEmail: {form.email.data}")
+        send_email(form.name.data, form.email.data, "", f"New User Registered!!!\n\nName: {form.name.data}\nEmail: {form.email.data}")
         return redirect(url_for("get_all_posts"))
     return render_template("register.html", form=form, current_user=current_user)
 
@@ -258,9 +258,9 @@ def about():
     return render_template("about.html", current_user=current_user)
 
 
-# @app.route("/contact", methods=["GET", "POST"])
-# def contact():
-#     return render_template("contact.html", current_user=current_user)
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    return render_template("contact.html", current_user=current_user)
 
 
 # Optional: You can include the email sending code from Day 60:
@@ -272,13 +272,13 @@ MAIL_APP_PW = os.environ.get("PASSWORD_KEY")
 TO_MAIL_ADDRESS = os.environ.get("TO_MAIL_ID")
 
 
-@app.route("/contact", methods=["GET", "POST"])
-def contact():
-    if request.method == "POST":
-        data = request.form
-        send_email(data["name"], data["email"], data["phone"], data["message"])
-        return render_template("contact.html", msg_sent=True)
-    return render_template("contact.html", msg_sent=False)
+# @app.route("/contact", methods=["GET", "POST"])
+# def contact():
+#     if request.method == "POST":
+#         data = request.form
+#         send_email(data["name"], data["email"], data["phone"], data["message"])
+#         return render_template("contact.html", msg_sent=True)
+#     return render_template("contact.html", msg_sent=False)
 
 
 def send_email(name, email, phone, message):
