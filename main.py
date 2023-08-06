@@ -11,7 +11,7 @@ from sqlalchemy.orm import relationship
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 # from dotenv import load_dotenv, dotenv_values
 import os
-load_dotenv()
+# load_dotenv()
 # print(os.environ['DATABASE_URL'])
 # Optional: add contact me email functionality (Day 60)
 # import smtplib
