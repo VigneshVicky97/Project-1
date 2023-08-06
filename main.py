@@ -9,6 +9,10 @@ from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy.orm import relationship
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
+from dotenv import load_dotenv, dotenv_values
+import os
+load_dotenv()
+# print(os.environ['DATABASE_URL'])
 # Optional: add contact me email functionality (Day 60)
 # import smtplib
 
@@ -39,7 +43,8 @@ gravatar = Gravatar(app,
                     base_url=None)
 
 # CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
+# postgres://vickys_blog_database_user:gwz2BlhrkqaL1LSyxJT2trKstNzixQhg@dpg-cj7qpps5kgrc73bhn2q0-a.oregon-postgres.render.com/vickys_blog_database
 db = SQLAlchemy()
 db.init_app(app)
 
