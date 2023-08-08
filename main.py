@@ -17,11 +17,13 @@ import smtplib
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
-# enable Code Snippet Plugin
-app.config['CKEDITOR_ENABLE_CODESNIPPET'] = True
+
 
 ckeditor = CKEditor(app)
 Bootstrap5(app)
+
+# enable Code Snippet Plugin
+app.config['CKEDITOR_ENABLE_CODESNIPPET'] = True
 
 # Configure Flask-Login
 login_manager = LoginManager()
