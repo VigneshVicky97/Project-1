@@ -9,11 +9,11 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Vicky's Blog</title>
+    <!-- Load code snippets CSS theme -->
+ 	{{ ckeditor.load_code_theme() }}
     {% block styles %}
     <!-- Load Bootstrap-Flask CSS here -->
     {{ bootstrap.load_css() }}
-    <!-- Load code snippets CSS theme -->
- 	{{ ckeditor.load_code_theme() }}
     <link
       rel="icon"
       type="image/x-icon"
